@@ -1,6 +1,6 @@
 # Pipeline of analysis for project "Odor, Music, Brain-Body" from Ghibaudo et al., 2024.
 
-This repository is organized into 5 types of python scripts : 
+This repository is organized into 5 types of python scripts, that could be run thanks to Python >= 3.11 with libraries described in the file "requirements.txt" : 
 
 - 1) Scripts containing useful tools (functions) and variables used in several scripts : 
     - bibliotheque_artifact_detection.py
