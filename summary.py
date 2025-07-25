@@ -35,21 +35,20 @@ resp = resp.groupby(indexes).median(True).reset_index()
 hrv = hrv_concat_job.get(global_key).to_dataframe()
 hrv = hrv.rename(columns = rename_col)
 
-df_loop = [resp,resp,hrv,hrv]
-metrics = ['cycle_duration','total_volume','HRV_Median','HRV_Mad']
-metrics_clean = ['Cycle Duration','Cycle Volume','Median RRi', 'HRV MAD']
-units = ['sec','AU','ms','ms']
-ax_pos = [[0,0],[0,1],[1,0],[1,1]]
+df_loop = [resp,hrv,hrv]
+metrics = ['cycle_duration','HRV_Median','HRV_Mad']
+metrics_clean = ['Cycle Duration','Median RRi', 'HRV MAD']
+units = ['sec','ms','ms']
+ax_pos = [0,1,2]
 
-nrows = 2
-ncols = 2
+ncols = 3
 
-fig, axs = plt.subplots(nrows = nrows, ncols=ncols, figsize = (10,7), constrained_layout = True)
+fig, axs = plt.subplots(ncols=ncols, figsize = (10,3), constrained_layout = True)
 
 counter = 0
 
 for pos in ax_pos:
-    ax = axs[pos[0], pos[1]]
+    ax = axs[pos]
 
     df = df_loop[counter]
     metric = metrics[counter]
